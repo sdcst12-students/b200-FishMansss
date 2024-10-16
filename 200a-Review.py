@@ -5,18 +5,29 @@ def getIntegers(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the integers to the new list
     integers = []
-
+    for i in myList:
+        if i % round(i,0) == 0:    
+            integers.append(i)   
+    print(integers) 
     return integers
+#getIntegers([3,4,1.2,1.3,5])
 
-def getFactor(myList,number):
+
+def getFactor(number):
     # myList : expected list or tuple
     # number : integer
     # iterate through the list and add the number to the list if
     # it is a factor of the number
     factors = []
-
+    
+    for i in range(number + 1):
+        x = number / (i+1)
+        if x % round(x,0) == 0:
+                factors.append(i+1)     
+    print(factors)
     return factors
-
+getFactor()
+'''
 def getNegatives(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the negative numbers to the new list
@@ -70,3 +81,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+'''
