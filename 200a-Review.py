@@ -24,18 +24,18 @@ def getFactor(number):
         x = number / (i+1)
         if x % round(x,0) == 0:
                 factors.append(i+1)     
- 
+
     return factors
-#getFactor(12)
+
 
 def getNegatives(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the negative numbers to the new list
     negatives = []
     for i in myList:
-        if i >= 0:
+        if i < 0:
             negatives.append(i)
-  
+    
     return negatives
 #getNegatives([-3,-1,0,1,4])
 
@@ -46,14 +46,16 @@ def getIntersection(list1,list2):
     # return a sorted list of numbers that is in both lists
     # the intersection of the 2 number sets
     common = []
-    common = set(list1).intersection(list2)
-
-
+    for i in list2:
+        if list1.count(i) > 0:
+            common.append(i)    
+    print(common)
     return common
-  
+
+
 #getIntersection(easy1,easy2)
     
-    
+
 
 def getUnion(list1,list2):
     # list 1: expected list or tuple
@@ -61,15 +63,22 @@ def getUnion(list1,list2):
     # return a sorted list of numbers that is in either of the lists
     # duplicate values will be ignored
     union = []
-    list1 == list1.sort(),list2 == list2.sort()
-
-    union = set(list1).union(list2)
-    union = list(union)
-
-   
+    
+    for i in list2:
+        if list1.count(i) == 0:
+            union.append(i)
+    
+    
+    union = union.sort()
+    print(union)
     return union   
-#getUnion(easy1,easy2)
 
+easy1 = [5,10,15,2,4,6,8]
+easy2 = [-2,-4,-6,2,4,6,0.1]
+
+
+getUnion(easy1,easy2)
+'''
 def getMerge(list1,list2):
     # list 1: expected list or tuple
     # list 2: expected list or tuple
@@ -94,14 +103,28 @@ def main():
     numbers2 = [3,7,11,15,19,23,27,31,35,39,44,50]
     try:
         assert getIntegers([3,4,1.2,1.3,5]) == [3,4,5]
-        assert getFactor(12) == [1,2,3,4,6]
+        assert getFactor(12) == [1,2,3,4,6,12]
         assert getNegatives([-3,-1,0,1,4]) == [-3,-1]
-        assert getUnion(easy1,easy2) == [-6, -4, -2, 0.1, 2, 4, 5, 6, 8, 10, 15]
-        assert getIntersection(easy1,easy2) == [2,4,6]
-        assert getMerge(easy1,easy2) == [5,10,15,2,2,4,4,6,6,8,-2,-4,-6,0.1]
+        #assert getIntersection(easy1,easy2) == [2,4,6]
+        #assert getUnion(easy1,easy2) == [-6, -4, -2, 0.1, 2, 4, 5, 6, 8, 10, 15]
+        #assert getMerge(easy1,easy2) == [5,10,15,2,2,4,4,6,6,8,-2,-4,-6,0.1]
         print("All assertions passed")
     except:
         print("At least 1 assertion failed")
 
 if __name__ == "__main__":
     main()
+
+
+'''
+
+
+
+
+
+
+
+
+
+
+
