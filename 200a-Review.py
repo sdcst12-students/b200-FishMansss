@@ -8,7 +8,7 @@ def getIntegers(myList):
     for i in myList:
         if i % round(i,0) == 0:    
             integers.append(i)   
-    print(integers) 
+ 
     return integers
 #getIntegers([3,4,1.2,1.3,5])
 
@@ -24,7 +24,7 @@ def getFactor(number):
         x = number / (i+1)
         if x % round(x,0) == 0:
                 factors.append(i+1)     
-    print(factors)
+ 
     return factors
 #getFactor(12)
 
@@ -35,7 +35,7 @@ def getNegatives(myList):
     for i in myList:
         if i >= 0:
             negatives.append(i)
-    print(negatives)
+  
     return negatives
 #getNegatives([-3,-1,0,1,4])
 
@@ -48,10 +48,9 @@ def getIntersection(list1,list2):
     common = []
     common = set(list1).intersection(list2)
 
-    print(common)
+
     return common
-easy1 = [5,10,15,2,4,6,8]
-easy2 = [-2,-4,-6,2,4,6,0.1]    
+  
 #getIntersection(easy1,easy2)
     
     
@@ -67,7 +66,7 @@ def getUnion(list1,list2):
     union = set(list1).union(list2)
     union = list(union)
 
-    print(union)
+   
     return union   
 #getUnion(easy1,easy2)
 
@@ -83,7 +82,7 @@ def getMerge(list1,list2):
         else:
             pos = list1.index(i)
             list1.insert(pos, i)
-    print(list1)
+
     return list1
 
 #getMerge(easy1,easy2)
